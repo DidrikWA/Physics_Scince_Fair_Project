@@ -7,7 +7,7 @@
 
 ## Terningkast
 ### **Hvor mange ganger må man regne med å kaste en terning for å få en sekser?**
-En sekssidet terning viser kun én side etter å ha blitt kastet. På bakgrunn av dette er sannsynligheten for å få et spesielt ønsket tall 1/6 eller 16.7%. Basert på sannsynligheten må man derfor regne med å kaste en terning seks ganger for å få et ønsket tall (en sekser). Det er likevel slik at man i virkeligheten kan oppleve å få ønsket tall på første kast, eller å ikke få ønskede tall selv om man har kastet 10 ganger. 
+En sekssidet terning viser kun én side etter å ha blitt kastet. På bakgrunn av dette er sannsynligheten for å få et spesielt ønsket tall 1/6 eller 16.7%. Basert på sannsynligheten må man derfor regne med å kaste en terning seks ganger for å få et ønsket tall (en sekser). Det er likevel slik at man i virkeligheten kan oppleve å få ønsket tall på første kast, eller å ikke få ønskede tall selv om man har kastet f.eks. 10 ganger. 
 
 ```
 import random
@@ -19,13 +19,13 @@ t = random.randint(1, 6)
 print(t)
 ```
 
-Koden vil fungere likt som en terning hvor målet er å få en sekser. **Koden fungerer slik:**
+**Koden vil fungere likt som en terning hvor målet er å få en sekser:**
 
 ```
 import random
 ```
-Vi begynner med å inkludere python biblioteket **random** som blant annet inneholder `methods` slik som **.randint(x, y)**. Med **.randint(x, y)** kan vi få tilfeldige tall innenfor <x, y> intervallet. 
-
+Vi begynner med å inkludere python biblioteket **random** som blant annet inneholder *methods* slik som **.randint(x, y)**. Vi kan bruke **.randint(x, y)** til å returnere et tilfeldig tall innenfor <x, y> intervallet. 
+ 
 ```
 t = 0
 ```
@@ -41,9 +41,9 @@ Vi setter dermed opp en `while - loop` som vil kjøre så lenge verdien av t er 
 
 ## Radioaktivitet
 ### **Hvordan utvikler terningium-atomer seg over tid?**
-I denne koden undersøker vi terningkast videre. Som utgangspunkt har vi 10 terninger til å begynne med. Vi kan sammenlikne terningene med terningnium-atomer. Vi kaster terningene og terningene som viser tallet 6 blir tatt bort, mens de terningene som ikke viser tallet 6 kastes på nytt. Sett fra terningnium-atomets verden kan vi tenke oss at det henfaller x antall atomer ved hvert «kast», eller minutt som beskrevet i oppgaven. De atomene som henfaller, er ikke lenger fullverdige terningium-atomer og vi kan tenke på dem som «fjernet» fra den totale mengden av atomer (10 stk.). Ved neste kast/minutt skjer denne prosessen på nytt, en prosess som i helhet skjer 10 ganger i total. 
+I denne koden viderefører vi sannsynlighetsberegning knyttet til terninger. Som utgangspunkt har vi 10 terninger til å begynne med. Vi kan sammenlikne terningene med terningnium-atomer. Vi kaster terningene og terningene som viser tallet 6 blir tatt bort, mens de terningene som ikke viser tallet 6 kastes på nytt. Sett fra terningnium-atomets verden kan vi tenke oss at det henfaller x antall atomer ved hvert «kast», eller minutt som beskrevet i oppgaven. De atomene som henfaller, er ikke lenger fullverdige terningium-atomer og vi kan tenke på dem som «fjernet» fra den totale mengden av atomer (10 stk). Ved neste kast/minutt skjer denne prosessen på nytt, en prosess som i helhet skjer 10 ganger i total. 
 
-Vi kan derfor svare på problemstillingen følgende; Vi kan forvente terning-nummer 6 for hvert sjette kast, dvs. et henfall for hvert sjette minutt (samme sannsynlighet for å forekomme 16.7%). Ettersom terningene og atomene er prikk like vil det minst fjernes/henfalle en terning/atom per kast/minutt helt frem til vi står igjen med fem terninger (kan her, basert på sannsynligheten, ikke forvente at det fjernes/henfaller en terning/atom). Sannsynligheten for riktig tall/henfall avtar naturligvis med færre terninger/atomer. Over tid vil derfor antall terningium-atomer avta, hvor vi vil oppleve at det avtar flest da vi har flere atomer (begynnelsen) og færre vil avta da vi har færre atomer.   
+Vi kan derfor svare på problemstillingen følgende; Vi kan forvente terning-nummer 6 for hvert sjette kast, dvs. et henfall for **et** atom  hvert sjette minutt (samme sannsynlighet for å forekomme 16.7%). Ettersom terningene og atomene er prikk like vil det minst fjernes/henfalle en terning/atom per kast/minutt helt frem til vi står igjen med fem terninger (kan her, basert på sannsynligheten, ikke forvente at det fjernes/henfaller en terning/atom). Sannsynligheten for riktig tall/henfall avtar naturligvis med færre terninger/atomer. Over tid vil derfor antall terningium-atomer avta, hvor vi vil oppleve at det avtar flest da vi har flere atomer (begynnelsen) og færre vil avta da vi har færre atomer.   
 
 ```
 import matplotlib.pyplot as plt
@@ -70,7 +70,7 @@ plt.show()
 
 For å besvare problemstillingen kan jeg forklare koden på følgende måte:
 1. Vi definerer variablen *Tid* som symboliserer antall minutter som "looper" 10 ganger = 10 minutter. 
-2. Hvert minutt henfaller x atomer/kaster vi og får x seksere, dette vises i *for-loopen*, antall atomer som henfaller lagres som en int i listen *antall*.
+2. Hvert minutt henfaller x atomer/kaster vi og får x seksere, dette vises i *for-loopen*, antall atomer som henfaller lagres som et helt tall i listen *antall*.
 3. Listen antall visulaiseres etter at loopen er ferdig å kjøre.
 
 MERK! Som i den virkelige verden avtar summen av atomer etter hvert som de henfaller, det totale sannsynligheten for henfall vil derfor avta, noe vi opplever ved å kjøre programmet. Se grafen under (negativ vekst)
@@ -107,7 +107,7 @@ while Tid > 0:
 ```
 Her har vi en "while loop" som kjører helt til variablen *Tid* er lik 0, verdien til *Tid* avtar med 1 per iterasjon. Vi har en *nested for-loop* som kjører 10 ganger, pga. "listelengden av variablen N, som har verdien 10". 
 
-Vi definerer en ny variabel *kast* som får en tilfeldig verdi mellom 1 og 6 (7 ikke inkludert), for hver iterasjon av while-loopen. Vi sammenlikner dermed verdien til kast; dersom verdien er lik 6 settes listeverdien til atom ved *i* (avhenger av iterasjonssyklusen vi er på) lik 0. Videre summerer vi listen *atom* på nytt og setter inn et nytt ledd i listen *antall*. Vi skriver dermed listen *atom* og summer av *atom* ut til terminalen.  
+Vi definerer en ny variabel *kast* som får en tilfeldig verdi mellom 1 og 6 (7 ikke inkludert), for hver iterasjon av while-loopen. Vi sammenlikner dermed verdien til kast; dersom verdien er lik 6 settes listeverdien til atom ved *i* (avhenger av iterasjonssyklusen vi er på) lik 0. Videre summerer vi listen *atom* på nytt og setter inn et nytt ledd i listen *antall*. Vi skriver dermed listen *atom* og summerer *atom* (danner en int) ut til terminalen.  
 
 ```
 plt.plot(antall, '.')
