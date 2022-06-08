@@ -1,5 +1,5 @@
 # SCINCE FAIR ~~POSTER~~ WEBSITE
-### Laget av Didrik Wiig-Andersen <br></br>
+### Laget av Didrik Wiig-Andersen <br>
 
 ### Denne nettsiden inneholder besvarelser for følgende oppgaver:
 - [Terningkast](#Terningkast)
