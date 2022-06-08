@@ -36,14 +36,14 @@ while t < 6:
 t = random.randint(1, 6)
 print(t)
 ```
-Vi setter dermed opp en `while - loop` som vil kjøre så lenge verdien av t er under 6. Loopen vil kjøre minst èn gang fordi t er satt til 0 i begynnelsen av programmet. t vil dermed få en ny, tilfeldig, verdi mellom 1 og 6 og videre printes til terminalen. Loopen kjører igjen dersom t < 6.
+Vi setter dermed opp en `while - loop` som vil kjøre så lenge verdien av t er under 6. Loopen vil kjøre minst èn gang fordi t er satt til 0 i begynnelsen av programmet. *t* vil dermed få en ny, tilfeldig, verdi mellom 1 og 6 og videre printes til terminalen. Loopen kjører igjen dersom t < 6. Ettersom målet er å få en 6, stopper loopen å kjøre da *t* = 6.
 ![](MEDIA/holed-cube.png)
 
 ## Radioaktivitet
 ### **Hvordan utvikler terningium-atomer seg over tid?**
-I denne algoritmen undersøker vi terningkast videre. Som utgangspunkt har vi 10 terninger til å begynne med. Vi kan sammenlikne terningene med terningnium-atomer. Vi kaster terningene og terningene som viser tallet 6 blir tatt bort, mens de terningene som ikke viser tallet 6 kastes på nytt. Sett fra terningnium-atomets verden kan vi tenke oss at det henfaller x antall atomer ved hvert «kast», eller minutt som beskrevet i oppgaven. De atomene som henfaller, er ikke lenger fullverdige terningium-atomer og vi kan tenke på dem som «fjernet» fra den totale mengden av atomer (10 stk.). Ved neste kast/minutt skjer denne prosessen på nytt, en prosess som i helhet skjer 11 ganger i total (første gang + 10 loops). 
+I denne koden undersøker vi terningkast videre. Som utgangspunkt har vi 10 terninger til å begynne med. Vi kan sammenlikne terningene med terningnium-atomer. Vi kaster terningene og terningene som viser tallet 6 blir tatt bort, mens de terningene som ikke viser tallet 6 kastes på nytt. Sett fra terningnium-atomets verden kan vi tenke oss at det henfaller x antall atomer ved hvert «kast», eller minutt som beskrevet i oppgaven. De atomene som henfaller, er ikke lenger fullverdige terningium-atomer og vi kan tenke på dem som «fjernet» fra den totale mengden av atomer (10 stk.). Ved neste kast/minutt skjer denne prosessen på nytt, en prosess som i helhet skjer 10 ganger i total. 
 
-Vi kan derfor svare på problemstillingen følgende; Vi kan forvente terning nummer 6 for hvert sjette kast, dvs. et henfall for hvert sjette minutt (samme sannsynlighet for å forekomme 16.7%). Ettersom terningene og atomene er prikk like vil det minst fjernes/henfalle en terning/atom per kast/minutt helt frem til vi står igjen med fem terninger (kan her, basert på sannsynligheten, ikke forvente at det fjernes/henfaller en terning/atom). Sannsynligheten for riktig tall/henfall avtar naturligvis med færre terninger/atomer. Over tid vil derfor antall terningium-atomer avta, hvor vi vil oppleve at det avtar flest da vi har flere atomer (begynnelsen) og færre vil avta da vi har færre atomer.   
+Vi kan derfor svare på problemstillingen følgende; Vi kan forvente terning-nummer 6 for hvert sjette kast, dvs. et henfall for hvert sjette minutt (samme sannsynlighet for å forekomme 16.7%). Ettersom terningene og atomene er prikk like vil det minst fjernes/henfalle en terning/atom per kast/minutt helt frem til vi står igjen med fem terninger (kan her, basert på sannsynligheten, ikke forvente at det fjernes/henfaller en terning/atom). Sannsynligheten for riktig tall/henfall avtar naturligvis med færre terninger/atomer. Over tid vil derfor antall terningium-atomer avta, hvor vi vil oppleve at det avtar flest da vi har flere atomer (begynnelsen) og færre vil avta da vi har færre atomer.   
 
 ```
 import matplotlib.pyplot as plt
@@ -69,7 +69,7 @@ plt.show()
 ```
 
 For å besvare problemstillingen kan jeg forklare koden på følgende måte:
-1. Vi definerer variablen *Tid* som symboliserer antall minutter som "looper" 10 ganger, eller i 10 minutter. 
+1. Vi definerer variablen *Tid* som symboliserer antall minutter som "looper" 10 ganger = 10 minutter. 
 2. Hvert minutt henfaller x atomer/kaster vi og får x seksere, dette vises i *for-loopen*, antall atomer som henfaller lagres som en int i listen *antall*.
 3. Listen antall visulaiseres etter at loopen er ferdig å kjøre.
 
@@ -77,7 +77,7 @@ MERK! Som i den virkelige verden avtar summen av atomer etter hvert som de henfa
 
 ![](MEDIA/Skjermbilde.PNG)
 
-For mer en mer detlajert beskrivelse av hvordan koden fungerer, se under.
+For en mer detlajert beskrivelse av hvordan koden fungerer, se under.
 
 **Koden fungerer på følgende måte:**
 ```
